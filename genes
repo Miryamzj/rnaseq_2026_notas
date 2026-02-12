@@ -67,7 +67,7 @@ rse[, c("A", "D", "F")]
 ## ----isee_basic, eval = FALSE---------------------------------------------------
 # ## Explora el objeto rse de forma interactiva
 # library("iSEE")
-# iSEE::iSEE(rse)
+# iSEE::iSEE(rs)
 
 ## ----download_sce_layer---------------------------------------------------------
 ## Descarguemos unos datos de spatialLIBD
@@ -79,3 +79,17 @@ lobstr::obj_size(sce_layer)
 
 ## ----explore_sce_layer, eval = FALSE--------------------------------------------
 # iSEE::iSEE(sce_layer)
+
+#Boxplot - gene_3
+x <- assay(rse)["gene_3", ]
+# x
+       A        B        C 
+9571.769 5280.564 9772.167 
+       D        E        F 
+9916.008 2621.208 6880.067 
+# y <- rse$Treatment 
+# y
+[1] "ChIP"  "Input" "ChIP"  "Input"
+[5] "ChIP"  "Input"
+# ?boxplot
+# boxplot(x~y)
